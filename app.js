@@ -7,10 +7,10 @@ modulo = angular.module("app",['ui.router']);
           
        
 
-       /* $http.get("http://pokeapi.co/api/v2/pokemon/1").then(function(resp){
+       $http.get("http://pokeapi.co/api/v2/pokemon/1").then(function(resp){
             console.log(resp.data.name)
              $scope.Name = resp.data.name;
-        });*/
+        });
     
     }
 
