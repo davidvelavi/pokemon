@@ -4,7 +4,7 @@ modulo = angular.module("app",['ui.router']);
 
     var PokemonController = function($scope, $http){
         $scope.Mensaje = "Pokemon";
-        
+          
        
 
        /* $http.get("http://pokeapi.co/api/v2/pokemon/1").then(function(resp){

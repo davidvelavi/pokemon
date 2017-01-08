@@ -5,10 +5,6 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
 	  browserSync= require('browser-sync').create();
 
- 
-
-
-
 // Servidor de desarrollo
 
 gulp.task('serve',function(){
@@ -23,7 +19,7 @@ gulp.task('serve',function(){
 gulp.task('concat', function() {
   return gulp.src(['./src/js/app.js','./src/js/PokemonController.js'])
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./'));
 });
 
 //Tarea para procesar el css
@@ -34,7 +30,7 @@ gulp.task('css',function(){
   ];
 	return gulp.src('./src/*.css')
       .pipe(postcss(processors))
-      .pipe(gulp.dest('./dist/css/'))
+      .pipe(gulp.dest('./'))
       .pipe(browserSync.stream())
 });
 
