@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<body>
-    Saludos pokemones
+<body ng-controller="PokemonController">
+    {{Mensaje}} - {{Name}}
+    Saludos
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <script src="/dist/js/app.js"></script>
 </body>
 </html>
