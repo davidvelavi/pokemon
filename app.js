@@ -27,7 +27,7 @@ modulo = angular.module("app",['ui.router']);
     var PokemonFactory = function ($http){
         return{
            obtenerPokemones:function(baseUrl){
-               return $http.get(baseUrl+'/pokemons.json');
+               return $http.get(baseUrl+'/pokemon/pokemons.json');
            }
         }
     };
