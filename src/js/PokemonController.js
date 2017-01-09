@@ -1,13 +1,15 @@
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, PokemonFactory,$http){
+    var PokemonController = function($scope, PokemonFactory,$http,$location){
         $scope.Mensaje = "Pokemon";
         var arrayPokemon = [];
         var arrayIdPokemon = [];
         $scope.pokemon = {};
+        var baseUrl = $location.absUrl();
+    
 
-        PokemonFactory.obtenerListPokemon().then(function(resp){
+    /*    PokemonFactory.obtenerListPokemon().then(function(resp){
             var firstSearch = resp.data.results;
             for(var i in firstSearch){
                arrayPokemon.push($http.get(firstSearch[i].url));
@@ -25,8 +27,10 @@
                 
             });
 
-        })
-    
+    })*/
+    $http.get(baseUrl+'pokemons.json').then(function(resp){
+        console.log(resp)
+    })
     }
 
 
