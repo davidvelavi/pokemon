@@ -3,34 +3,18 @@ modulo = angular.module("app",['ui.router']);
     var modulo = angular.module("app");
 
     var PokemonController = function($scope, PokemonFactory,$http,$location){
-        $scope.Mensaje = "Pokemon";
-        var arrayPokemon = [];
-        var arrayIdPokemon = [];
-        $scope.pokemon = {};
         var baseUrl = $location.absUrl();
+        $scope.ArrayPokemon = [];
+        $scope.pokemon = {};
+        
     
-
-    /*    PokemonFactory.obtenerListPokemon().then(function(resp){
-            var firstSearch = resp.data.results;
-            for(var i in firstSearch){
-               arrayPokemon.push($http.get(firstSearch[i].url));
-            }
-            PokemonFactory.obtenerPokemon(arrayPokemon).then(function(resp){
-                for(var i in resp){
-                   var url = "http://pokeapi.co/api/v2/pokemon/"+resp[i].data.id;
-                   arrayIdPokemon.push($http.get(url));
-                }
-                PokemonFactory.obtenerPokemon(arrayIdPokemon).then(function(resp){
-                    console.log("cada pokemon", resp[0].data)
-                    $scope.pokemon.img = resp[0].data.sprites.front_default;
-                });
-
-                
-            });
-
-    })*/
     $http.get(baseUrl+'pokemons.json').then(function(resp){
-        console.log(resp)
+        console.log(resp.data[0])
+       
+        $scope.pokemon.name = resp.data[0].name;
+        $scope.pokemon.img = './img/pokemons/'+resp.data[0].name.toLowerCase()+'.jpg';
+
+        console.log($scope.pokemon)
     })
     }
 
@@ -43,12 +27,7 @@ modulo = angular.module("app",['ui.router']);
     var modulo = angular.module('app');
     var PokemonFactory = function ($http,$q){
         return{
-            obtenerListPokemon:function(){
-               return  $http.get("http://pokeapi.co/api/v2/evolution-chain/?limit=5")
-            },
-            obtenerPokemon:function(array){
-                return $q.all(array);
-            }
+           
         }
     };
     modulo.factory("PokemonFactory",PokemonFactory);
