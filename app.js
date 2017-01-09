@@ -6,7 +6,7 @@ modulo = angular.module("app",['ui.router']);
         var baseUrl = window.location.origin;
         $scope.ArrayPokemon = [];
         var pokemon = {}; 
-      
+      console.log(baseUrl)
         PokemonFactory.obtenerPokemones(baseUrl).then(function(resp){
         for(var i in resp.data){
                 pokemon.name = resp.data[i].name;
@@ -37,7 +37,7 @@ modulo = angular.module("app",['ui.router']);
 
     var routes = function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise("/pokemon");
-        $stateProvider.state("/pokemon",{
+        $stateProvider.state("pokemon",{
             url:"/pokemon",
             templateUrl:"./templates/general.html"
 

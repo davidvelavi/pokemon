@@ -5,7 +5,7 @@
         var baseUrl = window.location.origin;
         $scope.ArrayPokemon = [];
         var pokemon = {}; 
-      
+      console.log(baseUrl)
         PokemonFactory.obtenerPokemones(baseUrl).then(function(resp){
         for(var i in resp.data){
                 pokemon.name = resp.data[i].name;
