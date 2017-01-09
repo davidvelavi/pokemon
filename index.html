@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#5A0015"> 
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Handlee|Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
+
 </head>
-<body ng-controller="PokemonController">
+<body>
     
     <section class="Pokedex">
         <header class="Pokedex-Header">
             <div class="Pokedex-Tira"></div>
-            
         </header>
-        <section class="Pokedex-Body">
-            <section class="Pokedex-Pokemon">
-                <figure class="Pokedex-PokemonFigure">
-                    <img ng-src={{pokemon.img}} alt="" class="Pokedex-PokemonImg">
-                </figure>
-            </section>
-        </section>
-
+        <ui-view></ui-view>
         <footer class="Pokedex-Footer">
             
         </footer>

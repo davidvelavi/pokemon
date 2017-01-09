@@ -18,7 +18,7 @@ gulp.task('serve',function(){
 
 // Tarea para procesar el js
 gulp.task('concat', function() {
-  return gulp.src(['./src/js/app.js','./src/js/PokemonController.js','./src/js/PokemonFactory.js'])
+  return gulp.src(['./src/js/app.js','./src/js/PokemonController.js','./src/js/PokemonFactory.js','./src/js/routes.js'])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./'));
 });
@@ -40,7 +40,7 @@ gulp.task('css',function(){
 
 gulp.task('watch',function(){
   gulp.watch('./src/*.css',['css'])
-  gulp.watch(['./src/js/app.js','./src/js/PokemonController.js'],['concat'])
+  gulp.watch(['./src/js/app.js','./src/js/PokemonController.js','./src/js/PokemonFactory.js','./src/js/routes.js'],['concat'])
   gulp.watch('/index.html').on('change',browserSync.reload)
 });
 

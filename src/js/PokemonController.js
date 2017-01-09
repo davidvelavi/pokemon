@@ -1,20 +1,19 @@
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, PokemonFactory,$http,$location){
-        var baseUrl = $location.absUrl();
+    var PokemonController = function($scope, PokemonFactory,$http){
+        var baseUrl = window.location.origin;
         $scope.ArrayPokemon = [];
-        $scope.pokemon = {};
-        
-    
-    $http.get(baseUrl+'pokemons.json').then(function(resp){
-        console.log(resp.data[0])
-       
-        $scope.pokemon.name = resp.data[0].name;
-        $scope.pokemon.img = './img/pokemons/'+resp.data[0].name.toLowerCase()+'.jpg';
-
-        console.log($scope.pokemon)
-    })
+        var pokemon = {}; 
+      
+        PokemonFactory.obtenerPokemones(baseUrl).then(function(resp){
+        for(var i in resp.data){
+                pokemon.name = resp.data[i].name;
+                pokemon.img = './img/pokemons/'+resp.data[i].name.toLowerCase()+'.jpg';
+                $scope.ArrayPokemon.push(pokemon);
+                pokemon = {};  
+            }
+        })
     }
 
 

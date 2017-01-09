@@ -1,0 +1,10 @@
+<section class="Pokedex-Body" ng-controller="PokemonController">
+   <section   class="Pokedex-Pokemon" ng-repeat="pokemon in ArrayPokemon">
+        <figcaption class="Pokedex-Pokemon-Name">
+            {{pokemon.name}}
+        </figcaption>
+        <figure class="Pokedex-Pokemon-Figure">
+            <img ng-src={{pokemon.img}} alt="" class="Pokedex-Pokemon-Img">
+        </figure>
+    </section>
+</section>

@@ -6,43 +6,34 @@
     margin: 0;
 }
 .Pokedex{
-    background: #F7FCFC;
-    height: 100vh;
+    background-color: #F7FCFC;
     width: 100%;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-            align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
+
 
 }
 .Pokedex-Header,
     .Pokedex-Footer{
     background: -webkit-linear-gradient(45deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
     background: linear-gradient(45deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
-    position:relative;
+    position:fixed;
     overflow:hidden;
     width:100%;
 }
 .Pokedex-Header{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 106px;
+    height: 75px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, .4);
+    top:0;
+    left:0;
 }
 .Pokedex-Footer{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 50px;
+    height: 25px;
     box-shadow: 0px -2px 3px rgba(0, 0, 0, .4);
+    bottom:0;
+    left:0;
 }
 .Pokedex-Tira{
-    height: 100px;
-    width: 100px;
+    height: 65px;
+    width: 65px;
     right: 0;
     top: 0;
     position: absolute;
@@ -53,8 +44,38 @@
     box-shadow:-1px 1px 2px  rgba(0, 0, 0, .8) ,inset 1px -1px 2px rgba(0, 0, 0, .6);
 }
 .Pokedex-Body{
-    background: (--bg-white);
-    -webkit-box-flex: 1;
-            flex-grow: 1;
+    background: #F7FCFC;
+    margin-top: 65px;
+    padding: 10px;
     width:100%;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.Pokedex-Pokemon{
+    width: 40%;
+    margin: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    padding: 5px 0px;
+}
+.Pokedex-Pokemon-Name{
+    font-family: 'Handlee';
+    font-size: 26px;
+    text-align:center;
+    margin-bottom: 5px;
+}
+.Pokedex-Pokemon-Figure{
+    width:90%;
+    margin: 0 auto;
+}
+.Pokedex-Pokemon-Img{
+    width: 100%;
 }

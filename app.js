@@ -2,20 +2,19 @@ modulo = angular.module("app",['ui.router']);
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, PokemonFactory,$http,$location){
-        var baseUrl = $location.absUrl();
+    var PokemonController = function($scope, PokemonFactory,$http){
+        var baseUrl = window.location.origin;
         $scope.ArrayPokemon = [];
-        $scope.pokemon = {};
-        
-    
-    $http.get(baseUrl+'pokemons.json').then(function(resp){
-        console.log(resp.data[0])
-       
-        $scope.pokemon.name = resp.data[0].name;
-        $scope.pokemon.img = './img/pokemons/'+resp.data[0].name.toLowerCase()+'.jpg';
-
-        console.log($scope.pokemon)
-    })
+        var pokemon = {}; 
+      
+        PokemonFactory.obtenerPokemones(baseUrl).then(function(resp){
+        for(var i in resp.data){
+                pokemon.name = resp.data[i].name;
+                pokemon.img = './img/pokemons/'+resp.data[i].name.toLowerCase()+'.jpg';
+                $scope.ArrayPokemon.push(pokemon);
+                pokemon = {};  
+            }
+        })
     }
 
 
@@ -25,10 +24,26 @@ modulo = angular.module("app",['ui.router']);
 
 (function(){
     var modulo = angular.module('app');
-    var PokemonFactory = function ($http,$q){
+    var PokemonFactory = function ($http){
         return{
-           
+           obtenerPokemones:function(baseUrl){
+               return $http.get(baseUrl+'/pokemons.json');
+           }
         }
     };
     modulo.factory("PokemonFactory",PokemonFactory);
+}());
+(function(){
+
+    var routes = function($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise("/pokemon");
+        $stateProvider.state("/pokemon",{
+            url:"/pokemon",
+            templateUrl:"./templates/general.html"
+
+        });
+    } 
+    var modulo = angular.module('app');
+    modulo.config(routes); 
+
 }());
