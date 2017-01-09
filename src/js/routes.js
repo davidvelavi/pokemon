@@ -1,9 +1,9 @@
 (function(){
 
     var routes = function($stateProvider,$urlRouterProvider){
-        $urlRouterProvider.otherwise("/pokemon");
-        $stateProvider.state("pokemon",{
-            url:"/pokemon",
+        $urlRouterProvider.otherwise("/inicio");
+        $stateProvider.state("inicio",{
+            url:"/inicio",
             templateUrl:"./templates/general.html"
 
         });
