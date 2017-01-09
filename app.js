@@ -2,19 +2,50 @@ modulo = angular.module("app",['ui.router']);
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, $http){
+    var PokemonController = function($scope, PokemonFactory,$http){
         $scope.Mensaje = "Pokemon";
-          
-       
+        var arrayPokemon = [];
+        var arrayIdPokemon = [];
+        $scope.pokemon = {};
 
-       $http.get("https://pokeapi.co/api/v2/pokemon/1").then(function(resp){
-            console.log(resp.data.name)
-             $scope.Name = resp.data.name;
-        });
+        PokemonFactory.obtenerListPokemon().then(function(resp){
+            var firstSearch = resp.data.results;
+            for(var i in firstSearch){
+               arrayPokemon.push($http.get(firstSearch[i].url));
+            }
+            PokemonFactory.obtenerPokemon(arrayPokemon).then(function(resp){
+                for(var i in resp){
+                   var url = "http://pokeapi.co/api/v2/pokemon/"+resp[i].data.id;
+                   arrayIdPokemon.push($http.get(url));
+                }
+                PokemonFactory.obtenerPokemon(arrayIdPokemon).then(function(resp){
+                    console.log("cada pokemon", resp[0].data)
+                    $scope.pokemon.img = resp[0].data.sprites.front_default;
+                });
+
+                
+            });
+
+        })
     
     }
 
 
 
     modulo.controller("PokemonController",PokemonController);
+}());
+
+(function(){
+    var modulo = angular.module('app');
+    var PokemonFactory = function ($http,$q){
+        return{
+            obtenerListPokemon:function(){
+               return  $http.get("http://pokeapi.co/api/v2/evolution-chain/?limit=5")
+            },
+            obtenerPokemon:function(array){
+                return $q.all(array);
+            }
+        }
+    };
+    modulo.factory("PokemonFactory",PokemonFactory);
 }());

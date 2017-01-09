@@ -2,12 +2,31 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5A0015"> 
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body ng-controller="PokemonController">
-    {{Mensaje}} - {{Name}}
-    Saludos
+    
+    <section class="Pokedex">
+        <header class="Pokedex-Header">
+            <div class="Pokedex-Tira"></div>
+            jdskjdksjdkjskd
+        </header>
+        <section class="Pokedex-Body">
+            <section class="Pokedex-Pokemon">
+                <figure class="Pokedex-PokemonFigure">
+                    <img ng-src={{pokemon.img}} alt="" class="Pokedex-PokemonImg">
+                </figure>
+            </section>
+        </section>
+
+        <footer class="Pokedex-Footer">
+            Foorer
+        </footer>
+
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>

@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     cssnext = require('postcss-cssnext'),
     cssnested = require('postcss-nested'),
+    atimport = require('postcss-import'),
     concat = require('gulp-concat'),
 	  browserSync= require('browser-sync').create();
 
@@ -17,7 +18,7 @@ gulp.task('serve',function(){
 
 // Tarea para procesar el js
 gulp.task('concat', function() {
-  return gulp.src(['./src/js/app.js','./src/js/PokemonController.js'])
+  return gulp.src(['./src/js/app.js','./src/js/PokemonController.js','./src/js/PokemonFactory.js'])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./'));
 });
@@ -25,6 +26,7 @@ gulp.task('concat', function() {
 //Tarea para procesar el css
 gulp.task('css',function(){
   var processors = [
+    atimport(),
     cssnested,
     cssnext({browsers:['> 5%','ie 8']})
   ];

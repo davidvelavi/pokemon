@@ -1,1 +1,66 @@
-  
+
+
+:root{
+    --bg-red : #CF0023;
+    --bg-white : #F7FCFC;
+    --azul :#7EC1C2;   
+    --negro : #000; 
+    --rojod : #5A0015;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.Pokedex{
+    background: var(--bg-white);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    &-Header,
+    &-Footer{
+        background: linear-gradient(45deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
+        position:relative;
+        overflow:hidden;
+        width:100%;
+    }
+    &-Header{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top: solid 2px var(--negro); 
+        border-left:solid 2px var(--negro); 
+        border-right: solid 2px var(--negro); 
+        height: 106px; 
+        box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+    }
+    &-Footer{
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom: solid 2px var(--negro); 
+        border-left:solid 2px var(--negro); 
+        border-right: solid 2px var(--negro);
+        height: 50px;
+        box-shadow: 0px -2px 3px rgba(0,0,0,0.4);
+    }
+    &-Tira{
+        height: 100px;
+        width: 100px;
+        right: 0;
+        top: 0;
+        position: absolute;
+        background: transparent;
+        border-bottom-left-radius: 100%;
+        border-left: solid 10px var(--rojod);
+        border-bottom: solid 10px var(--rojod);
+        box-shadow: 0px 0px 2px var(--bg-white);
+    }
+    &-Body{
+        background: var(-var(--bg-white)); 
+        flex-grow: 1;
+        width:100%; 
+    }
+
+}
