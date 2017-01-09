@@ -36,7 +36,7 @@ modulo = angular.module("app",['ui.router']);
 (function(){
 
     var routes = function($stateProvider,$urlRouterProvider){
-        //$urlRouterProvider.otherwise("/inicio");
+        $urlRouterProvider.otherwise("/inicio");
         $stateProvider.state("inicio",{
             url:"/inicio",
             templateUrl:"./templates/general.html"
