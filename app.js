@@ -2,8 +2,8 @@ modulo = angular.module("app",['ui.router']);
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, PokemonFactory,$http){
-        var baseUrl = window.location.origin;
+    var PokemonController = function($scope, PokemonFactory,$http,$location){
+        var baseUrl = $location.absUrl().split('#')[0];
         $scope.ArrayPokemon = [];
         var pokemon = {}; 
       console.log(baseUrl)
@@ -27,7 +27,7 @@ modulo = angular.module("app",['ui.router']);
     var PokemonFactory = function ($http){
         return{
            obtenerPokemones:function(baseUrl){
-               return $http.get(baseUrl+'/pokemon/pokemons.json');
+               return $http.get(baseUrl+'pokemons.json');
            }
         }
     };

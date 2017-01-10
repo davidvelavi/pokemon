@@ -1,8 +1,8 @@
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, PokemonFactory,$http){
-        var baseUrl = window.location.origin;
+    var PokemonController = function($scope, PokemonFactory,$http,$location){
+        var baseUrl = $location.absUrl().split('#')[0];
         $scope.ArrayPokemon = [];
         var pokemon = {}; 
       console.log(baseUrl)

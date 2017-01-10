@@ -3,7 +3,7 @@
     var PokemonFactory = function ($http){
         return{
            obtenerPokemones:function(baseUrl){
-               return $http.get(baseUrl+'/pokemon/pokemons.json');
+               return $http.get(baseUrl+'pokemons.json');
            }
         }
     };
