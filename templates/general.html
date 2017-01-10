@@ -1,9 +1,40 @@
 <section class="Pokedex-Body" ng-controller="PokemonController">
+    <ul class="Pokedex-Menu" ng-class="{'active':activarMenu}">
+        <li class="Pokedex-Menu-Item">
+            <span ng-click="activarMenu = false">Filtro</span>
+            <ul class="Pokedex-Menu-SubItem">
+                <li>
+                    <span>Especie</span>
+                    <ul class="">
+                        <li ng-click="seleccionFiltro()">Todos</li>
+                        <li ng-repeat="e in filtros.especies" ng-click="seleccionFiltro(e)">
+                            {{e}}
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>Tipo</span>
+                    <ul class="">
+                        <li ng-click="seleccionFiltro()">Todos</li>
+                        <li ng-repeat="t in filtros.tipos" ng-click="seleccionFiltro(t)">
+                            {{t}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span>2.-About</span>
+        </li>
+    </ul>
+   
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam facilis quae doloribus voluptates, sint, assumenda nemo error, nobis ab incidunt pariatur doloremque iusto. Quaerat velit, incidunt nesciunt similique adipisci, cum.
-   <section   class="Pokedex-Pokemon" ng-repeat="pokemon in ArrayPokemon">
+    <section   class="Pokedex-Pokemon" ng-repeat="pokemon in ArrayPokemon | filter:especieFiltro">
         <figcaption class="Pokedex-Pokemon-Name">
-            {{pokemon.name}}
+            {{especieFiltro}}
+            {{pokemon.tipos}}
+            <br>    
+            {{pokemon.name}} - {{pokemon.especie}}
         </figcaption>
         <figure class="Pokedex-Pokemon-Figure">
             <img ng-src={{pokemon.img}} alt="" class="Pokedex-Pokemon-Img">
