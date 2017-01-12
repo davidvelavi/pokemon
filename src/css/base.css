@@ -1,0 +1,12 @@
+:root{
+    --bg-red : #CF0023;
+    --bg-white : #F7FCFC;
+    --azul :#7EC1C2;   
+    --negro : #000; 
+    --rojod : #5A0015;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}

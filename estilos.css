@@ -1,15 +1,11 @@
-
-
 *{
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0;    
 }
 .Pokedex{
     background-color: #F7FCFC;
     width: 100%;
-
-
 }
 .Pokedex-Header,
     .Pokedex-Footer{
@@ -17,19 +13,19 @@
     background: linear-gradient(-45deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
     position:fixed;
     overflow:hidden;
-    width:100%;
+    width:100%;    
 }
 .Pokedex-Header{
     height: 75px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, .4);
     top:0;
-    left:0;
+    left:0;    
 }
 .Pokedex-Footer{
     height: 25px;
     box-shadow: 0px -2px 3px rgba(0, 0, 0, .4);
     bottom:0;
-    left:0;
+    left:0;    
 }
 .Pokedex-Tira{
     height: 65px;
@@ -41,7 +37,7 @@
     border-bottom-left-radius: 100%;
     border-left: solid 10px #5A0015;
     border-bottom: solid 10px #5A0015;
-    box-shadow:-1px 1px 2px  rgba(0, 0, 0, .8) ,inset 1px -1px 2px rgba(0, 0, 0, .6);
+    box-shadow:-1px 1px 2px  rgba(0, 0, 0, .8) ,inset 1px -1px 2px rgba(0, 0, 0, .6);    
 }
 .Pokedex-Body{
     background: #F7FCFC;
@@ -51,7 +47,7 @@
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around;    
 }
 .Pokedex-Pokemon{
     width: 40%;
@@ -65,19 +61,59 @@
     -webkit-box-pack: justify;
             justify-content: space-between;
     padding: 5px 0px;
-    font-family: 'Handlee';
+    font-family: 'Handlee';    
 }
 .Pokedex-Pokemon-Name{
     font-size: 26px;
     text-align:center;
-    margin-bottom: 5px;
+    margin-bottom: 5px;    
 }
 .Pokedex-Pokemon-Figure{
     width:90%;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 .Pokedex-Pokemon-Img{
+    width: 100%;    
+}
+.Pokedex-Detalle{
     width: 100%;
+    margin: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+            justify-content: center;
+    font-family: 'Handlee';
+    padding:5px;    
+}
+.Pokedex-Detalle-Figure{
+    width: 35%;    
+}
+.Pokedex-Detalle-Img{
+    width: 100%;    
+}
+.Pokedex-Detalle-Info{
+    -webkit-box-flex: 1;
+            flex-grow: 1;
+    padding-left: 5px;    
+}
+.Pokedex-Detalle-Nombre{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;    
+}
+.Pokedex-Detalle-Caracteristicas{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;    
+}
+.Pokedex-Detalle-Caracteristicas p:nth-child(1){
+    font-weight: bold;    
 }
 .Pokedex-Menu{
     background-color: #5A0015;
@@ -91,34 +127,35 @@
     z-index: 1;
     font-family: 'Handlee';
     color: #F7FCFC;
-    overflow: hidden;
+    overflow: hidden;    
 }
 .Pokedex-Menu.active{
-    width: 65%;
+    width: 65%;    
 }
 .Pokedex-Menu-Item{
     margin-top: 10px;
     list-style: none;
-    padding-left: 10px;
+    padding-left: 10px;    
 }
 .Pokedex-Menu-Item > span{
-    line-height: 30px;
+    line-height: 30px;    
 }
 .Pokedex-Menu-SubItem{
     padding-left: 15px;
-    list-style: none;
+    list-style: none;    
 }
 .Pokedex-Menu-SubItem > li > span{
-    line-height: 30px;
+    line-height: 30px;    
 }
 .Pokedex-Menu-SubItem > li > ul{
     max-height: 300px;
-    overflow-x: hidden;
+    overflow-x: hidden;    
 }
 .Pokedex-Menu-SubItem > li > ul li{
     line-height: 30px;
     list-style: none;
     padding-left: 15px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);    
 }
+
   

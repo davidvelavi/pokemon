@@ -1,0 +1,29 @@
+<ul class="Pokedex-Menu" ng-controller="PokemonMenuController">
+    <li class="Pokedex-Menu-Item">
+        <span ng-click="activarMenu = false">Filtro</span>
+        <ul class="Pokedex-Menu-SubItem">
+            <li>
+                <span ng-click="ocultarItems('Especie')">Especie {{especieOculto}}</span>
+                <ul  ng-hide="especieOculto">
+                    <li ng-click="seleccionFiltro()">Todos  </li>
+                    <li ng-repeat="e in filtros.especies" ng-click="seleccionFiltro(e)">
+                        {{e}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span ng-click="ocultarItems('Tipo')" >Tipo {{tipoOculto}}</span>
+                <ul  ng-hide="tipoOculto">
+                    <li ng-click="seleccionFiltro()">Todos</li>
+                    <li ng-repeat="t in filtros.tipos" ng-click="seleccionFiltro(t)">
+                        {{t}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>2.-About</span>
+    </li>
+</ul>
+   

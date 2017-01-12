@@ -18,9 +18,10 @@ gulp.task('serve',function(){
 
 // Tarea para procesar el js
 gulp.task('concat', function() {
-  return gulp.src(['./src/js/app.js','./src/js/PokemonController.js','./src/js/PokemonFactory.js','./src/js/routes.js'])
+  return gulp.src(['./src/js/app.js','./src/js/*.js'])
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
 });
 
 //Tarea para procesar el css
@@ -39,8 +40,8 @@ gulp.task('css',function(){
 // Tarea para vigilar los cambios
 
 gulp.task('watch',function(){
-  gulp.watch('./src/*.css',['css'])
-  gulp.watch(['./src/js/app.js','./src/js/PokemonController.js','./src/js/PokemonFactory.js','./src/js/routes.js'],['concat'])
+  gulp.watch(['./src/*.css','./src/css/*.css'],['css'])
+  gulp.watch(['./src/js/*.js'],['concat'])
   gulp.watch('/index.html').on('change',browserSync.reload)
 });
 

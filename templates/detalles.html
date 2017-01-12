@@ -1,0 +1,33 @@
+<section class="Pokedex-Body">
+    <section class="Pokedex-Detalle">
+        <figure class="Pokedex-Detalle-Figure">
+            <img ng-src="{{detallePokemon.img}}" alt="" class="Pokedex-Detalle-Img">
+        </figure>
+        <section class="Pokedex-Detalle-Info">
+            <figcaption class="Pokedex-Detalle-Nombre">
+                {{detallePokemon.nombre}}
+            </figcaption>
+            <div class="Pokedex-Detalle-Caracteristicas">
+                <p> Especie :</p>
+                <p> {{detallePokemon.especie}} </p>
+            </div>
+            <div class="Pokedex-Detalle-Caracteristicas">
+                <p> Tipo :</p>
+                <p> {{detallePokemon.tipo}} </p>
+            </div>
+            <div class="Pokedex-Detalle-Caracteristicas">
+                <p> Altura :</p>
+                <p> {{detallePokemon.altura}} </p>
+            </div>
+            <div class="Pokedex-Detalle-Caracteristicas">
+                <p> Peso :</p>
+                <p> {{detallePokemon.peso}} </p>
+            </div>
+        </section>
+
+        <section class="Pokedex-Detalle-evolucion">
+            {{detallePokemon.evolucion}}
+        </section>
+        
+    </section>
+</section>
