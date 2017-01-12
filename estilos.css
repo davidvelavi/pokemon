@@ -115,6 +115,34 @@
 .Pokedex-Detalle-Caracteristicas p:nth-child(1){
     font-weight: bold;    
 }
+.Pokedex-Detalle-Caracteristicas p span:nth-child(1){
+    margin-right: 5px;    
+}
+.Pokedex-Detalle-Evolucion{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    margin-top: 10px;    
+}
+.Pokedex-Detalle-Evolucion-Figure{
+    width: 49%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+            align-items: center;    
+}
+.Pokedex-Detalle-Evolucion-Img{
+    width: 50%;    
+}
+.Pokedex-Detalle-Evolucion-Nombre{
+    text-align: center;    
+}
 .Pokedex-Menu{
     background-color: #5A0015;
     position: fixed;

@@ -13,7 +13,10 @@
             </div>
             <div class="Pokedex-Detalle-Caracteristicas">
                 <p> Tipo :</p>
-                <p> {{detallePokemon.tipo}} </p>
+                <p> <span ng-repeat="t in detallePokemon.tipo">
+                        {{t}}
+                    </span> 
+                </p>
             </div>
             <div class="Pokedex-Detalle-Caracteristicas">
                 <p> Altura :</p>
@@ -25,8 +28,14 @@
             </div>
         </section>
 
-        <section class="Pokedex-Detalle-evolucion">
-            {{detallePokemon.evolucion}}
+        <section class="Pokedex-Detalle-Evolucion">
+            <figure class="Pokedex-Detalle-Evolucion-Figure" ng-repeat="e in detallePokemon.evolucion" ui-sref="detalle({'pokemon':e.nombre})">
+                <img class="Pokedex-Detalle-Evolucion-Img" ng-src={{e.img}} alt="">
+                <figcaption class="Pokedex-Detalle-Evolucion-Nombre">
+                    {{e.nombre}}
+                </figcaption>
+            </figure>
+            
         </section>
         
     </section>
