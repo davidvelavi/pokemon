@@ -12,7 +12,13 @@
 <body>
     
     <section class="Pokedex">
-        <header class="Pokedex-Header">
+        <header class="Pokedex-Header" ng-controller="PokemonHeaderController">
+            <div class="Pokedex-MenuIcon" ng-click="abrirMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="Pokedex-Menu-Back" ng-click="cerrarMenu()"></span>
             <div class="Pokedex-Tira"></div>
         </header>
         <div ui-view="menu"></div>

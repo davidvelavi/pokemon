@@ -19,6 +19,9 @@
                 "cuerpo":{
                     templateUrl:"./templates/detalles.html",
                     controller:"PokemonDetalleController"
+                },
+                "menu":{
+                    templateUrl:"./templates/menu.html"
                 }
             },
             resolve:{
@@ -34,7 +37,7 @@
             }  
         });
     } 
-    var modulo = angular.module('app');
+    var modulo = angular.module('app');   
     modulo.config(routes); 
 
 }());

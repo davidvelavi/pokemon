@@ -5,11 +5,15 @@
            obtenerPokemones:function(baseUrl){
                return $http.get(baseUrl+'pokemons.json');
            },
-           establecerItems:function(items){
+           establecerItems:function(items){  
                factory.Filtros = items;
            },
            establecerFiltro:function(filtro){
                factory.filtro = filtro;
+           },
+           abrirMenu:function(menu){
+               console.log("menu",menu)
+               factory.menu = menu;
            }
         }
         return factory;

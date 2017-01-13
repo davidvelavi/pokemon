@@ -1,22 +1,39 @@
-<ul class="Pokedex-Menu" ng-controller="PokemonMenuController">
+<ul class="Pokedex-Menu" ng-controller="PokemonMenuController" ng-class="{'active':activarMenu==true}">
+    <span class="Pokedex-Menu-Cerrar" ng-click="cerrarMenu()"> X </span>
     <li class="Pokedex-Menu-Item">
-        <span ng-click="activarMenu = false">Filtro</span>
+        <span>Filtro</span>
         <ul class="Pokedex-Menu-SubItem">
             <li>
-                <span ng-click="ocultarItems('Especie')">Especie {{especieOculto}}</span>
+                <span ng-click="ocultarItems('Especie')">Especie</span>
                 <ul  ng-hide="especieOculto">
-                    <li ng-click="seleccionFiltro()">Todos  </li>
+                    <li ng-click="seleccionFiltro()">
+                        <label for="Todose">
+                            Todos
+                            <input type="radio" name="filtro" id="Todose" class="Pokedex-Menu-Check" checked > <span></span>
+                        </label>    
+                    </li>
                     <li ng-repeat="e in filtros.especies" ng-click="seleccionFiltro(e)">
-                        {{e}}
+                        <label for="{{e}}">
+                            {{e}} 
+                            <input type="radio" name="filtro" id="{{e}}" class="Pokedex-Menu-Check" > <span></span>
+                        </label>
                     </li>
                 </ul>
             </li>
             <li>
-                <span ng-click="ocultarItems('Tipo')" >Tipo {{tipoOculto}}</span>
+                <span ng-click="ocultarItems('Tipo')" >Tipo</span>
                 <ul  ng-hide="tipoOculto">
-                    <li ng-click="seleccionFiltro()">Todos</li>
-                    <li ng-repeat="t in filtros.tipos" ng-click="seleccionFiltro(t)">
-                        {{t}}
+                    <li >
+                        <label for="Todost" ng-click="seleccionFiltro()">
+                            Todos
+                            <input type="radio" name="filtrot" id="Todost" class="Pokedex-Menu-Check" checked > <span></span>
+                        </label>  
+                    </li>
+                    <li ng-repeat="t in filtros.tipos" >
+                        <label for="{{t}}" ng-click="seleccionFiltro(t)">
+                            {{t}} 
+                            <input type="radio" name="filtrot" id="{{t}}" class="Pokedex-Menu-Check" > <span></span>
+                        </label>
                     </li>
                 </ul>
             </li>

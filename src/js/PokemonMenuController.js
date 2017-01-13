@@ -5,7 +5,18 @@
         $scope.especieOculto = true;
         $scope.tipoOculto = true;
         $scope.especieFiltro;
-        $scope.activarMenu = true;
+        $scope.activarMenu = false;
+
+        $scope.$watch(function(){return PokemonFactory.menu},function(newValue,oldValue){
+            $scope.activarMenu = newValue;
+        });
+        $scope.cerrarMenu= function(){
+            console.log("CERRRAR")
+            $scope.activarMenu = false;
+            PokemonFactory.abrirMenu(false);
+        }
+
+
         $scope.$watch(function(){return PokemonFactory.Filtros;}, function(newValue, oldValue){
              $scope.filtros = newValue;
         });

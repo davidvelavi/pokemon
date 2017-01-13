@@ -27,6 +27,36 @@
     bottom:0;
     left:0;    
 }
+.Pokedex-MenuIcon{
+    position: absolute;
+    display: none;
+    left:20px;
+    top:20px;
+    height: 30px;
+    width: 30px;    
+}
+.Pokedex-MenuIcon span{
+    display: block;
+    width:100%;
+    height:5px;
+    margin-top: 5px;
+    background-color: #F7FCFC;    
+}
+.Pokedex-Menu-Back{
+    cursor:  pointer;
+    position: absolute;
+    left:20px;
+    top:20px;
+    height: 30px;
+    width: 30px;    
+}
+.Pokedex-Menu-Back:after{
+    color: #F7FCFC;
+    content: "\21A9";
+    font-size: 27px;
+    text-align: center;
+    display: block;    
+}
 .Pokedex-Tira{
     height: 65px;
     width: 65px;
@@ -144,7 +174,8 @@
     text-align: center;    
 }
 .Pokedex-Menu{
-    background-color: #5A0015;
+    background: -webkit-linear-gradient(135deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
+    background: linear-gradient(-45deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
     position: fixed;
     top:0px;
     bottom:0px;
@@ -159,6 +190,19 @@
 }
 .Pokedex-Menu.active{
     width: 65%;    
+}
+.Pokedex-Menu-Cerrar{
+    background-color: #F7FCFC;
+    color: #5A0015;
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 100%;
+    box-shadow: 1px 4px #5A0015;    
 }
 .Pokedex-Menu-Item{
     margin-top: 10px;
@@ -183,7 +227,36 @@
     line-height: 30px;
     list-style: none;
     padding-left: 15px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);    
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+    position: relative;    
+}
+.Pokedex-Menu-SubItem > li > ul li label{
+    cursor: pointer;
+    display: block;    
+}
+.Pokedex-Menu-Check{
+    display: none;    
+}
+.Pokedex-Menu-Check + span {
+    background-color: #fff;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    right: 9px;
+    top: 8px;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .4);    
+}
+.Pokedex-Menu-Check:checked + span:after{
+    content:"";
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    border-color: #CF0023;
+    height: 12px;
+    position: absolute;
+    width: 5px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    right: 4px;    
 }
 
   

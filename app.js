@@ -85,11 +85,15 @@ var PokemonDetalleController = function($scope,$http,detalle){
            obtenerPokemones:function(baseUrl){
                return $http.get(baseUrl+'pokemons.json');
            },
-           establecerItems:function(items){
+           establecerItems:function(items){  
                factory.Filtros = items;
            },
            establecerFiltro:function(filtro){
                factory.filtro = filtro;
+           },
+           abrirMenu:function(menu){
+               console.log("menu",menu)
+               factory.menu = menu;
            }
         }
         return factory;
@@ -98,12 +102,39 @@ var PokemonDetalleController = function($scope,$http,detalle){
 }());
 (function(){
 
+    var PokemonHeaderController = function($scope,$rootScope,$location,PokemonFactory){
+        console.log("PokemonHeaderController",$location.path(),"dsjhfjdshfjhsd",$location.path());
+        
+
+        $scope.abrirMenu = function(){
+            console.log("dfjkdjfkdjkf");
+            PokemonFactory.abrirMenu(true);
+        }
+    }
+
+    var modulo = angular.module("app");
+    modulo.controller("PokemonHeaderController",PokemonHeaderController);
+
+}());
+(function(){
+
     var PokemonMenuController = function($scope, PokemonFactory){
         $scope.filtros = {};
         $scope.especieOculto = true;
         $scope.tipoOculto = true;
         $scope.especieFiltro;
-        $scope.activarMenu = true;
+        $scope.activarMenu = false;
+
+        $scope.$watch(function(){return PokemonFactory.menu},function(newValue,oldValue){
+            $scope.activarMenu = newValue;
+        });
+        $scope.cerrarMenu= function(){
+            console.log("CERRRAR")
+            $scope.activarMenu = false;
+            PokemonFactory.abrirMenu(false);
+        }
+
+
         $scope.$watch(function(){return PokemonFactory.Filtros;}, function(newValue, oldValue){
              $scope.filtros = newValue;
         });
@@ -148,6 +179,9 @@ var PokemonDetalleController = function($scope,$http,detalle){
                 "cuerpo":{
                     templateUrl:"./templates/detalles.html",
                     controller:"PokemonDetalleController"
+                },
+                "menu":{
+                    templateUrl:"./templates/menu.html"
                 }
             },
             resolve:{
@@ -163,7 +197,7 @@ var PokemonDetalleController = function($scope,$http,detalle){
             }  
         });
     } 
-    var modulo = angular.module('app');
+    var modulo = angular.module('app');   
     modulo.config(routes); 
 
 }());
