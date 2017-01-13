@@ -13,13 +13,14 @@
     
     <section class="Pokedex">
         <header class="Pokedex-Header" ng-controller="PokemonHeaderController">
-            <div class="Pokedex-MenuIcon" ng-click="abrirMenu()">
+            <div class="Pokedex-MenuIcon" ng-click="abrirMenu()" ng-if="$root.enlace == '/inicio'">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <span class="Pokedex-Menu-Back" ng-click="cerrarMenu()"></span>
+            <span class="Pokedex-Menu-Back" ng-if="$root.enlace != '/inicio'" ng-click="return()"></span>
             <div class="Pokedex-Tira"></div>
+            
         </header>
         <div ui-view="menu"></div>
         <div ui-view="cuerpo"></div>

@@ -1,7 +1,8 @@
 (function(){
 
-var PokemonDetalleController = function($scope,$http,detalle){
+var PokemonDetalleController = function($scope,$http,$rootScope,$location,detalle){
         $scope.detallePokemon = {};
+        $rootScope.enlace = $location.path();
         var evolucion = [];
         $scope.detallePokemon.nombre = detalle[0].name;
         $scope.detallePokemon.img = './img/pokemons/'+detalle[0].name.toLowerCase()+'.jpg';

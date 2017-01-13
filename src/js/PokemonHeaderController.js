@@ -1,12 +1,12 @@
 (function(){
 
-    var PokemonHeaderController = function($scope,$rootScope,$location,PokemonFactory){
-        console.log("PokemonHeaderController",$location.path(),"dsjhfjdshfjhsd",$location.path());
-        
-
+    var PokemonHeaderController = function($scope,$state,PokemonFactory){
         $scope.abrirMenu = function(){
             console.log("dfjkdjfkdjkf");
             PokemonFactory.abrirMenu(true);
+        }
+        $scope.return= function(){
+            $state.go("inicio");
         }
     }
 

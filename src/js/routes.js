@@ -19,9 +19,6 @@
                 "cuerpo":{
                     templateUrl:"./templates/detalles.html",
                     controller:"PokemonDetalleController"
-                },
-                "menu":{
-                    templateUrl:"./templates/menu.html"
                 }
             },
             resolve:{

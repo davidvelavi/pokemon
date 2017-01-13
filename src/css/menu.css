@@ -12,11 +12,13 @@
         color: var(--bg-white);
         overflow: hidden;
         &.active{  
-            width: 65%;  
+            width: 65%; 
+            max-width: 326px;
         }
         &-Cerrar{
             background-color: var(--bg-white);
             color:var(--rojod);
+            cursor: pointer;
             position: absolute;
             top: 13px;
             right: 15px;

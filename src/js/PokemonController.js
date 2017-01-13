@@ -1,8 +1,9 @@
 (function(){
     var modulo = angular.module("app");
 
-    var PokemonController = function($scope, PokemonFactory,$http,$location){
+    var PokemonController = function($scope, PokemonFactory,$http,$location,$rootScope){
         var baseUrl = $location.absUrl().split('#')[0];
+        $rootScope.enlace = $location.path();
         $scope.ArrayPokemon = [];
         var especies = [];
         var tipos = [];

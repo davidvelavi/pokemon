@@ -793,7 +793,7 @@
   },
   {
     "id": "029",
-    "name": "Nidoran♀",
+    "name": "Nidoranf",
     "species": "Poison Pin Pokémon",
     "type": [
       "Poison"
@@ -815,7 +815,7 @@
       "total": 275
     },
     "evolution": [
-      "Nidoran♀",
+      "Nidoranm",
       "Nidorina",
       "Nidoqueen"
     ]
@@ -844,7 +844,7 @@
       "total": 365
     },
     "evolution": [
-      "Nidoran♀",
+      "Nidoranf",
       "Nidorina",
       "Nidoqueen"
     ]
@@ -874,14 +874,14 @@
       "total": 505
     },
     "evolution": [
-      "Nidoran♀",
+      "Nidoranf",
       "Nidorina",
       "Nidoqueen"
     ]
   },
   {
     "id": "032",
-    "name": "Nidoran♂",
+    "name": "Nidoranm",
     "species": "Poison Pin Pokémon",
     "type": [
       "Poison"
@@ -903,7 +903,7 @@
       "total": 273
     },
     "evolution": [
-      "Nidoran♂",
+      "Nidoranm",
       "Nidorino",
       "Nidoking"
     ]
@@ -932,7 +932,7 @@
       "total": 365
     },
     "evolution": [
-      "Nidoran♂",
+      "Nidoranm",
       "Nidorino",
       "Nidoking"
     ]
@@ -962,7 +962,7 @@
       "total": 505
     },
     "evolution": [
-      "Nidoran♂",
+      "Nidoranm",
       "Nidorino",
       "Nidoking"
     ]
@@ -3436,7 +3436,7 @@
   },
   {
     "id": "122",
-    "name": "Mr. Mime",
+    "name": "Mr.Mime",
     "species": "Barrier Pokémon",
     "type": [
       "Psychic",
