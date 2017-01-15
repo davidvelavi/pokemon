@@ -4,7 +4,7 @@
         <span>Filtro</span>
         <ul class="Pokedex-Menu-SubItem">
             <li>
-                <span ng-click="ocultarItems('Especie')">Especie</span>
+                <span ng-click="ocultarItems('Especie')" ng-class="{'active':especieOculto==false}">Especie</span>
                 <ul  ng-hide="especieOculto">
                     <li ng-click="seleccionFiltro()">
                         <label for="Todose">
@@ -21,7 +21,7 @@
                 </ul>
             </li>
             <li>
-                <span ng-click="ocultarItems('Tipo')" >Tipo</span>
+                <span ng-click="ocultarItems('Tipo')" ng-class="{'active':tipoOculto==false}">Tipo</span>
                 <ul  ng-hide="tipoOculto">
                     <li >
                         <label for="Todost" ng-click="seleccionFiltro()">
@@ -39,8 +39,8 @@
             </li>
         </ul>
     </li>
-    <li>
-        <span>2.-About</span>
+    <li class="Pokedex-Menu-Item">
+        <span ><a href="https://davidvelavi.github.io/cv" target="_blank">Autor</a> </span>
     </li>
 </ul>
    

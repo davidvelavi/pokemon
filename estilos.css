@@ -13,7 +13,8 @@
     background: linear-gradient(-45deg, #a90329 23%, #8f0222 44%, #6d0019 100%);
     position:fixed;
     overflow:hidden;
-    width:100%;    
+    width:100%;
+    z-index:1;    
 }
 .Pokedex-Header{
     height: 75px;
@@ -31,6 +32,7 @@
     position: absolute;
     left:20px;
     top:20px;
+    cursor: pointer;
     height: 30px;
     width: 30px;    
 }
@@ -80,6 +82,7 @@
     justify-content: space-around;    
 }
 .Pokedex-Pokemon{
+    cursor: pointer;
     width: 40%;
     margin: 10px;
     -webkit-transition: 0.5;
@@ -93,7 +96,24 @@
     -webkit-box-pack: justify;
             justify-content: space-between;
     padding: 5px 0px;
-    font-family: 'Handlee';    
+    font-family: 'Handlee';
+    position: relative;    
+}
+.Pokedex-Pokemon:hover:after{
+    height:20px;
+    width:20px;    
+}
+.Pokedex-Pokemon:after{
+    content: "" ;
+    -webkit-transition: 0.5s;
+    transition:0.5s;
+    position:absolute;
+    background: -webkit-linear-gradient(45deg, #5A0015 45%, #aaaaaa 50%, #cccccb 60%,white);
+    background: linear-gradient(45deg, #5A0015 45%, #aaaaaa 50%, #cccccb 60%,white);
+    height:0px;
+    width:0px;
+    top:0;
+    right:0;    
 }
 @media screen and (min-width: 680px){
     .Pokedex-Pokemon{
@@ -247,7 +267,7 @@
     color: #5A0015;
     cursor: pointer;
     position: absolute;
-    top: 13px;
+    top: 20px;
     right: 15px;
     width: 30px;
     height: 30px;
@@ -257,19 +277,40 @@
     box-shadow: 1px 4px #5A0015;    
 }
 .Pokedex-Menu-Item{
-    margin-top: 10px;
+    margin-top: 20px;
     list-style: none;
     padding-left: 10px;    
 }
 .Pokedex-Menu-Item > span{
     line-height: 30px;    
 }
+.Pokedex-Menu-Item:last-child span a{
+    color: #F7FCFC;
+    text-decoration: none;    
+}
 .Pokedex-Menu-SubItem{
     padding-left: 15px;
+    padding-top: 10px;
     list-style: none;    
 }
 .Pokedex-Menu-SubItem > li > span{
-    line-height: 30px;    
+    line-height: 30px;
+    cursor:pointer;
+    display:block;
+    position: relative;    
+}
+.Pokedex-Menu-SubItem > li > span.active:after{
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);    
+}
+.Pokedex-Menu-SubItem > li > span:after{
+    content: "\25BC";
+    position: absolute;
+    right: 22px;
+    text-shadow: 2px 2px #5A0015;
+    -webkit-transition: 0.5s;
+    transition:0.5s;
+    color: #CF0023;    
 }
 .Pokedex-Menu-SubItem > li > ul{
     max-height: 300px;
@@ -284,7 +325,12 @@
 }
 .Pokedex-Menu-SubItem > li > ul li label{
     cursor: pointer;
-    display: block;    
+    display: block;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;    
+}
+.Pokedex-Menu-SubItem > li > ul li label:hover{
+    font-size: 0.9em;    
 }
 .Pokedex-Menu-Check{
     display: none;    
